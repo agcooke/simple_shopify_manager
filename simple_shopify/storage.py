@@ -30,7 +30,9 @@ def write(data_file, product_data, max_lens):
 def read(data_file):
     raw_products = []
     with open(data_file, "r") as fp:
-        r = csv.reader(fp)
+        dialect = csv.Sniffer().sniff(fp.read())
+        fp.seek(0)
+        r = csv.reader(fp, dialect)
         for row in r:
             raw_products.append(row)
     raw_products = zip(*raw_products)
