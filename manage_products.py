@@ -2,7 +2,7 @@
 """Manage Shopify Products
 
 Usage:
-  manage_products.py <export|update>
+  manage_products.py <download|update>
 """
 from __future__ import print_function
 import shopify
